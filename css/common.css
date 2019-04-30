@@ -1,0 +1,22 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+html, body, section, footer, div, p, input{margin:0;padding:0;border:0;background:none;font-family:"Nanum Gothic", sans-serif}
+html, body{width:100%;height:100%;overflow-x:hidden;}
+body{text-align:center;background:url("../images/bg.jpg") no-repeat 50% 0;background-attachment:fixed;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+input[type="submit"]{-webkit-border-radius:0; -moz-border-radius:0; border-radius:0; -webkit-appearance: none;}
+
+#section{position:absolute;left:50%;margin-left:-142px;top:50%;margin-top:-206px;width:284px;}
+#section p{letter-spacing:-2px;}
+#section p:first-child{font-size:30px;padding-bottom:7px}
+#section p + p{font-size:20px}
+.wifi{width:180px;height:180px;margin:20px auto 30px;background:url("../images/wifi.png") no-repeat 50% 0;-webkit-background-size:100% 100%;-moz-background-size:100% 100%;-o-background-size:100% 100%;background-size:100% 100%}
+input[type="submit"]{width:244px;height:51px;color:#fff;font-size:18px;background-color:#2d65cb;}
+.logo{width:150px;height:45px;margin:20px auto 0;background:url("../images/ruckus_logo.png") no-repeat 50% 0;-webkit-background-size:100% 100%;-moz-background-size:100% 100%;-o-background-size:100% 100%;background-size:100% 100%}
+
+@media screen and  (max-width:477px) {
+#section p:first-child{font-size:25px;padding-bottom:4px}
+#section p + p{font-size:17px}
+.wifi{width:150px;height:150px}
+input[type="submit"]{width:200px;height:40px}
+}

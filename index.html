@@ -1,0 +1,55 @@
+<html>
+ <head>
+  <meta charset="euc-kr" />
+  <meta name="viewport" content="width=device-width, initial-scale=no, maximum-scale=no, minimum-scale=no, user-scalable=no, target-densityDpi=medium-dpi" />
+  <title> 남구 공공 와이파이 </title>
+  <link rel="stylesheet" href="css/common.css" />
+  <!--[if lt IE 9]>
+	<script type="text/javascript" src="js/html5.js"></script>
+  <![endif]-->
+  
+  <script type="text/javascript">
+	function get_param(name)
+	{
+		if (location.href.indexOf("?") >= 0) 
+		{ 
+			var query=location.href.split("?")[1];
+			var params=query.split("&");
+			for (var i = 0; i < params.length; i ++) {
+				value_pair=params[i].split("=");
+				if (value_pair[0] == name)
+					return unescape(value_pair[1]);
+			}
+		}
+		return "";
+	}
+	function get_nbiIP() {
+		var nbiIP = get_param("nbiIP");
+	//var nbiIP = "172.21.144.65"; ----> ?????? IP ???? ??½?
+
+		if (nbiIP.indexOf(":") < 0) { // IPv4 address
+			return nbiIP;
+		} else {                    // IPv6 address
+			return '[' + nbiIP + ']';
+		}
+	}
+</script>
+ </head>
+
+ <body>
+<img src = "landing.jpg" height = "100%">
+	<section id="section">
+		<div class="wifi"></div>
+		<script type="text/javascript">
+		document.write('<form method=POST action="http://' + get_nbiIP() + ':9997/SubscriberPortal/hotspotlogin">');
+		document.write('<input type="hidden" name="url" value="'+get_param("url")+'" />');
+		document.write('<input type="hidden" name="proxy" value="'+get_param("proxy")+'" />');
+		document.write('<input type="hidden" name="uip" value="'+get_param("uip")+'" />');
+		document.write('<input type="hidden" name="client_mac" value="'+get_param("client_mac")+'" />');
+		</script>
+		<input type="hidden" name="username" value="guest">
+		<input type="hidden" name="password" value="guest">
+		<input type="submit" value="남구 Free WIFI 시작하기">
+	</section>
+ </body>
+</html>
